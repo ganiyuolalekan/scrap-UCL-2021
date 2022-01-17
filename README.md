@@ -1,24 +1,26 @@
 # Scraping the UEFA Champions League (UCL) data
 
-This project extracts group stage information on the current teams in the season 2021/22 (both statistical and historical data) making use of the scrapy tool. Most of the information scraped were hardcoded to obtain specified data.
+This project extracts group stage information on the current teams in the season 2021/22 (both statistical and historical data) making use of the scrapy tool. 
 
-```python
-['Team Name', 'Team Code', 'Wins', 'Draws', 'Loses', 'Points',
- 'Qualified','Group','Country Code','Goals','Goals conceded',
- 'Possession (%)', 'Passing accuracy (%)', 'Balls recovered',
- 'Tackles won', 'Clean sheets', 'Saves', 'Distance covered (km)',
- 'Yellow cards', 'Red cards', 'Right foot', 'Left foot', 'Head', 
- 'Assists', 'Attacks', 'Clear chances', 'Penalties scored', 
- 'Corners taken', 'Offsides', 'Runs into attacking third', 
- 'Runs into key play area', 'Passes completed', 
- 'Short passes completed', 'Medium passes completed', 
- 'Long passes completed', 'Crossing accuracy (%)', 
- 'Crosses completed', 'Crosses attempted', 'Free-kicks taken', 
- 'Times in possession', 'Passes into attacking third', 
- 'Passes into key play area', 'Passes into penalty area', 'Blocks']
-```
+Most of the information scraped currently were hardcoded to obtain specified data from this season (2021/22). But in future works it would be able to extract the entire league data of each seasonal competition which will be recorded at [kaggle](https://www.kaggle.com/ganiyuolalekan/uefa-champions-league-202122).
 
-The data-set (which was published on [kaggle](https://www.kaggle.com/ganiyuolalekan/uefa-champions-league-202122)) is an intuitive data-set and thus it can be used to answer simple questions since it is quiet small but detailed. __read my article on [steps to creating a proper dataset](#)__ 
+Some data recorded are:
+
+| Columns | Descriptions |
+|:--------------:|:--------------:|
+| Team Name | Team names record  |
+| Team Code | Teams short code information |
+| Country Code | Teams country code information |
+| Wins | Number of wins in the competition  |
+| Draws | Number of draws in the competition |
+| Loses | Number of loses in the competition |
+| Points | Total point of teams in the season |
+| Group | Teams group for the season |
+| Qualified | Team qualification status (True if qualified) |
+
+Others includes: Goals, Goals conceded, Possession, Passing accuracy, Balls recovered, Tackles won, Clean sheets, Saves, Distance covered e.t.c.
+
+The [data-set](https://www.kaggle.com/ganiyuolalekan/uefa-champions-league-202122)) is an intuitive data-set, thus it can be used to answer simple questions since it is quiet small but detailed. __read my article on [Factors Essential to Creating a Data-Set](https://gmolalekan.medium.com/factors-essential-to-creating-a-data-set-88aa617a71f8)__ 
 
 To recreate the crawling steps start by installing Scrapy; using conda, run:
 
@@ -35,7 +37,7 @@ pip install Scrapy
 Once this is done, you can proceed to cloning the project and crawling the data into a csv or json file.
 
 ```commandline
-git clone 
+git clone https://github.com/ganiyuolalekan/scrap-UCL-2021.git
 cd 
 scrapy crawl ucl_2021_team_info -o ucl_2021_22_data.csv
 ```
